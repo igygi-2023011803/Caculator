@@ -1,23 +1,50 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class Main extends JFrame {
+    private  JTextField textField;
+    private  String operator;
+    private  double num1, num2;
     public Main() {
         setTitle("계산기");
-        setSize(520,250);
+        setSize(400,600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
-        JTextField textField = new JTextField();
-        add(textField, BorderLayout.NORTH);
+        JPanel PanelA = new JPanel();
+        textField = new JTextField(20);
+        textField.setEditable(false);
+        PanelA.add(textField);
+        add(PanelA, BorderLayout.NORTH);
 
-        JPanel button = new JPanel();
-        button.setLayout(new GridLayout(5, 5,3,3));
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new GridLayout(5, 4,10,10));
 
-        add(button, BorderLayout.CENTER);
+        String[] buttons = {
+                "7", "8", "9", "/",
+                "4", "5", "6", "x",
+                "1", "2", "3", "-",
+                ".", "0", "=", "+",
+                "C", "", "", "Del"
+        };
+
+        for (String text : buttons) {
+            JButton button = new JButton(text);
+            button.addActionListener(new ButtonClickListener());
+            buttonPanel.add(button);
+        }
+
+        add(buttonPanel, BorderLayout.CENTER);
         setVisible(true);
 
     }
+
+    private class ButtonClickListner implements ActionListener {
+        public void actionPer
+
+    }
+
     public static void main(String [] args){
         new Main();
     }
