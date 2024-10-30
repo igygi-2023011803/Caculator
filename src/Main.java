@@ -41,7 +41,10 @@ public class Main extends JFrame {
     }
 
     private class ButtonClickListner implements ActionListener {
-        public void actionPer
+        public void actionPerformed(ActionEvent e) {
+            String command = e.getActionCommand();
+
+            if (command.charAt)
 
     }
 
