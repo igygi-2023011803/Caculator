@@ -21,6 +21,7 @@ public class Main extends JFrame {
         textField.setPreferredSize(new Dimension(400, 60));
         textField.setFont(new Font("Arial", Font.PLAIN, 20));
         textField.setBorder(BorderFactory.createEmptyBorder());
+        textField.setHorizontalAlignment(JTextField.CENTER);
         PanelA.add(textField);
         add(PanelA, BorderLayout.NORTH);
 
